@@ -9,13 +9,6 @@ package tron2dgame;
  *
  * @author S347391269
  */
-public class Tron2DGame {
-
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String[] args) {
-        MainWindow GameWindow = new MainWindow("Tron", 800, 800);
-    }
+public class MainMenu {
     
 }
