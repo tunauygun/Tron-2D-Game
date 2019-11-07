@@ -29,4 +29,12 @@ public class MainWindow extends JFrame {
 	window.setVisible(true);
 	window.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
     }
+    
+    public void runGameBoard(GameBoard b) throws InterruptedException{
+        this.add(b);
+        while (true) {
+            b.repaint();
+            Thread.sleep(10);
+	}
+    }
 }
