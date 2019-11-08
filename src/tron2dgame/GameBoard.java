@@ -9,7 +9,6 @@ import java.awt.Color;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
 import java.awt.RenderingHints;
-import java.awt.geom.Ellipse2D;
 import javax.swing.JPanel;
 
 /**
@@ -33,15 +32,20 @@ public class GameBoard extends JPanel{
 	Graphics2D g2d = (Graphics2D) g;
 	g2d.setRenderingHint(RenderingHints.KEY_ANTIALIASING,
 	RenderingHints.VALUE_ANTIALIAS_ON);
-        g2d.fillOval(this.gridSize, this.gridSize, 30, 30);
-	//drawGrid(g);
+        //g2d.fillOval(this.gridSize, this.gridSize, 30, 30);
+        //g2d.drawLine(0, 0, 0, width);
+	drawGrid(g);
     }
     
     public void drawGrid(Graphics g){
+        //this.setSize(width, height);
         Graphics2D g2d = (Graphics2D) g;
-        g2d.setColor(Color.BLACK);
-        for(int i = 0; i<this.width/this.gridSize; i+=this.gridSize){
-            g2d.drawLine(i, 0, i, this.width);
+        g2d.setColor(Color.LIGHT_GRAY);
+        for(int i = 0; i<width; i+=gridSize){
+            g2d.drawLine(i, 0, i, height);
+        }
+        for(int i = 0; i<height; i+=gridSize){
+            g2d.drawLine(0, i, width, i);
         }
     }
 }
