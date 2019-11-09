@@ -4,24 +4,20 @@
  * and open the template in the editor.
  */
 package tron2dgame;
-import java.awt.Graphics;
-import java.awt.Graphics2D;
 
 /**
  *
  * @author S347391269
  */
 public class Tron2DGame {
-
     /**
      * @param args the command line arguments
      * @throws java.lang.InterruptedException
      */
     public static void main(String[] args) throws InterruptedException {
-        MainWindow GameWindow = new MainWindow("Tron", 900, 700);
-        GameWindow.setupWindow();
-        GameBoard Board = new GameBoard(5, GameWindow.width, GameWindow.height);
-        GameWindow.runGameBoard(Board);
+        MainWindow Window = new MainWindow();
+        GameBoard Board = new GameBoard(10, Window.width, Window.height);
+        Window.setupWindow(Board);
     }
     
 }

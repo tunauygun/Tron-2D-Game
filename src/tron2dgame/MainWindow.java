@@ -5,36 +5,28 @@
  */
 package tron2dgame;
 
+import java.awt.Dimension;
 import javax.swing.JFrame;
+import javax.swing.JPanel;
 
 /**
  *
  * @author S347391269
  */
 public class MainWindow extends JFrame {
-    int width;
-    int height;
-    String winTitle;
+    public static int width = 600;
+    public static int height= 600;
     
-    public MainWindow(String title, int w, int h){
-        width = w;
-        height = h;
-        winTitle = title;
+    public void setupWindow(JPanel jp){
+        this.setTitle("Tron");
+        this.getContentPane().add("Center", jp);
+        this.pack();
+	this.setSize(width+16, height+40);
+	this.setVisible(true);
+	this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        this.setPreferredSize(new Dimension(width, height));
+        this.setLocationRelativeTo(null);
     }
     
-    public void setupWindow(){
-        JFrame window = new JFrame(winTitle);
-        //window.add(new Game2());
-	window.setSize(width, height);
-	window.setVisible(true);
-	window.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-    }
-    
-    public void runGameBoard(GameBoard b) throws InterruptedException{
-        this.add(b);
-        while (true) {
-            b.repaint();
-            Thread.sleep(10);
-	}
-    }
 }
+
