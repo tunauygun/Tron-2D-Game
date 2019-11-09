@@ -16,15 +16,9 @@ import javax.swing.JPanel;
  * @author S347391269
  */
 public class GameBoard extends JPanel{
-    int gridSize;
-    int width;
-    int height;
-
-    public GameBoard(int size, int w, int h){
-        gridSize = size;
-        width = w;
-        height = h;
-    }
+    public static int gridSize = 10;
+    public static int width = 500;
+    public static int height = 500;
     
     @Override
     public void paint(Graphics g) {
@@ -41,10 +35,10 @@ public class GameBoard extends JPanel{
         //this.setSize(width, height);
         Graphics2D g2d = (Graphics2D) g;
         g2d.setColor(Color.LIGHT_GRAY);
-        for(int i = 0; i<width; i+=gridSize){
+        for(int i = 0; i<=width; i+=gridSize){
             g2d.drawLine(i, 0, i, height);
         }
-        for(int i = 0; i<height; i+=gridSize){
+        for(int i = 0; i<=height; i+=gridSize){
             g2d.drawLine(0, i, width, i);
         }
     }

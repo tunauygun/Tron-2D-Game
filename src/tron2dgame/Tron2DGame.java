@@ -16,7 +16,8 @@ public class Tron2DGame {
      */
     public static void main(String[] args) throws InterruptedException {
         MainWindow Window = new MainWindow();
-        GameBoard Board = new GameBoard(10, Window.width, Window.height);
+        GameBoard Board = new GameBoard();
+        Player player1 = new Player(1);
         Window.setupWindow(Board);
     }
     

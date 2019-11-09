@@ -14,8 +14,8 @@ import javax.swing.JPanel;
  * @author S347391269
  */
 public class MainWindow extends JFrame {
-    public static int width = 600;
-    public static int height= 600;
+    public static int width = 500;
+    public static int height= 500;
     
     public void setupWindow(JPanel jp){
         this.setTitle("Tron");
