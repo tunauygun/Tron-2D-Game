@@ -5,6 +5,8 @@
  */
 package tron2dgame;
 
+import java.awt.Color;
+
 /**
  *
  * @author S347391269
@@ -12,12 +14,12 @@ package tron2dgame;
 public class Tron2DGame {
     /**
      * @param args the command line arguments
-     * @throws java.lang.InterruptedException
      */
-    public static void main(String[] args) throws InterruptedException {
+    public static void main(String[] args) {
         MainWindow Window = new MainWindow();
-        GameBoard Board = new GameBoard();
-        Player player1 = new Player(1);
+        Player player1 = new Player(1, Color.BLUE);
+        Player player2 = new Player(-1, Color.RED);
+        GameBoard Board = new GameBoard(player1,player2);
         Window.setupWindow(Board);
     }
     

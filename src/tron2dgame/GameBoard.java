@@ -17,8 +17,16 @@ import javax.swing.JPanel;
  */
 public class GameBoard extends JPanel{
     public static int gridSize = 10;
-    public static int width = 500;
-    public static int height = 500;
+    public static int width = 510;
+    public static int height = 510;
+    
+    Player p1;
+    Player p2;
+    
+    public GameBoard(Player plyr1, Player plyr2){
+        p1 = plyr1;
+        p2 = plyr2;
+    }
     
     @Override
     public void paint(Graphics g) {
@@ -26,14 +34,12 @@ public class GameBoard extends JPanel{
 	Graphics2D g2d = (Graphics2D) g;
 	g2d.setRenderingHint(RenderingHints.KEY_ANTIALIASING,
 	RenderingHints.VALUE_ANTIALIAS_ON);
-        //g2d.fillOval(this.gridSize, this.gridSize, 30, 30);
-        //g2d.drawLine(0, 0, 0, width);
-	drawGrid(g);
+        drawGrid(g2d);
+        p1.drawPlayer(g2d);
+        p2.drawPlayer(g2d);
     }
     
-    public void drawGrid(Graphics g){
-        //this.setSize(width, height);
-        Graphics2D g2d = (Graphics2D) g;
+    private void drawGrid(Graphics2D g2d){
         g2d.setColor(Color.LIGHT_GRAY);
         for(int i = 0; i<=width; i+=gridSize){
             g2d.drawLine(i, 0, i, height);
@@ -42,4 +48,5 @@ public class GameBoard extends JPanel{
             g2d.drawLine(0, i, width, i);
         }
     }
+    
 }

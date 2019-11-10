@@ -14,13 +14,12 @@ import javax.swing.JPanel;
  * @author S347391269
  */
 public class MainWindow extends JFrame {
-    public static int width = 500;
-    public static int height= 500;
+    public static int width = 510;
+    public static int height= 510;
     
     public void setupWindow(JPanel jp){
         this.setTitle("Tron");
         this.getContentPane().add("Center", jp);
-        this.pack();
 	this.setSize(width+16, height+40);
 	this.setVisible(true);
 	this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);

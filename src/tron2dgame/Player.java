@@ -20,26 +20,21 @@ public class Player {
     int playerX;
     int playerY;
     int playerId;
+    Color color;
     
-    public Player (int Id){
+    public Player (int Id, Color c){
         playerId = Id;
+        color = c;
     }
     
-    
-    public void paint(Graphics g) {
-        //super.paint(g);
-	Graphics2D g2d = (Graphics2D) g;
-	g2d.setRenderingHint(RenderingHints.KEY_ANTIALIASING,
-	RenderingHints.VALUE_ANTIALIAS_ON);
-	drawPlayer(g);
-    }
-
-    private void drawPlayer(Graphics g) {
-        Graphics2D g2d = (Graphics2D) g;
-        g2d.setColor(Color.BLUE);
-        playerX = findCenterTile()[0] + this.playerId;
+    public void drawPlayer(Graphics g) {
+        Graphics2D p2D = (Graphics2D) g;
+        p2D.setRenderingHint(RenderingHints.KEY_ANTIALIASING,
+        RenderingHints.VALUE_ANTIALIAS_ON);
+        p2D.setColor(color);
+        playerX = findCenterTile()[0] + playerId*GameBoard.gridSize;
         playerY = findCenterTile()[1];
-        g2d.fillRect(playerX, playerY, GameBoard.gridSize, GameBoard.gridSize);
+        p2D.fillRect(playerX, playerY, GameBoard.gridSize, GameBoard.gridSize);
     }
     
     private int[] findCenterTile(){
