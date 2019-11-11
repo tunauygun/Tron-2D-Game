@@ -17,10 +17,12 @@ public class Tron2DGame {
      */
     public static void main(String[] args) {
         MainWindow Window = new MainWindow();
-        Player player1 = new Player(1, Color.BLUE);
-        Player player2 = new Player(-1, Color.RED);
+        Player player1 = new Player(1, Color.BLUE, "ARROWKEYS", "Player1 (Blue)");
+        Player player2 = new Player(-1, Color.RED, "WASD", "Player2 (Red)");
         GameBoard Board = new GameBoard(player1,player2);
         Window.setupWindow(Board);
     }
+    
+
     
 }
